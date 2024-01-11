@@ -1,24 +1,20 @@
-package Day01;
+package utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
-public class _05_Example {
-    /**
-     * Go to "https://opencart.abstracta.us/index.php?route=account/login" page
-     * login
-     * email:  testngusbatch@gmail.com
-     * password: usbatch1234
-     * verify that you see My Account
-     **/
+import java.io.IOException;
 
-    @Test
-    void loginTest(){
-        WebDriver driver = new ChromeDriver();
+public class DriverClass {
+    public WebDriver driver;
+
+    @BeforeClass
+    public void createDriver(){
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         driver.get("https://opencart.abstracta.us/index.php?route=account/login");
@@ -29,19 +25,31 @@ public class _05_Example {
         WebElement proceedLink = driver.findElement(By.id("proceed-link"));
         proceedLink.click();
 
+        login();
+    }
+
+    @AfterClass
+    public void quitDriver(){
+        driver.quit();
+        closePreviousDrivers();
+    }
+
+    public void login(){
         WebElement email = driver.findElement(By.id("input-email"));
-        email.sendKeys("testngusbatch@gmail.com");
+        email.sendKeys("knightrider@gmail.com");
 
         WebElement password = driver.findElement(By.id("input-password"));
-        password.sendKeys("usbatch1234");
+        password.sendKeys("MichaelKnight1234");
 
         WebElement loginButton = driver.findElement(By.cssSelector("input[type=\"submit\"]"));
         loginButton.click();
+    }
 
-        WebElement myAccount = driver.findElement(By.xpath("(//div[@id=\"content\"]//h2)[1]"));
-
-        Assert.assertTrue(myAccount.isDisplayed(), "Test is failed");
-
-        driver.quit();
+    public void closePreviousDrivers(){
+        try {
+            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
