@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test with XMLIntro class">
+        <classes>
+            <class name="Day03._03_XMLIntro"></class>
+        </classes>
+    </test>
+    
+    <test name="Test with XMLIntro2 class">
+        <classes>
+            <class name="Day03._04_XMLIntro2"></class>
+        </classes>
+    </test>
+</suite>

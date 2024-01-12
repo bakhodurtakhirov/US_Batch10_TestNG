@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="First XML Test">
+        <classes>
+            <class name="Day03._03_XMLIntro"></class> <!--Put the classes we want to run here--><!--Put the classes we want to run here-->
+        </classes>
+    </test>
+</suite>
