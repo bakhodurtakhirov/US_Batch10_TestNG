@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test Methods Exclude with Groups">
+        <groups>
+            <run>
+                <include name="Integration"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Day04._01_Groups">
+                <methods>
+                    <exclude name="test2"></exclude> <!--Runs all tests in Integration group except test2-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

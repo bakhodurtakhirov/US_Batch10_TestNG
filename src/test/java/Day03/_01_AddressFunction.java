@@ -23,7 +23,7 @@ public class _01_AddressFunction extends DriverClass {
      * Write 3 different tests for add, edit and delete address
      */
 
-    @Test
+    @Test(groups = "MyGroup")
     void addAddressTest() {
         WebElement addressBook = driver.findElement(By.linkText("Address Book"));
         addressBook.click();
@@ -86,7 +86,7 @@ public class _01_AddressFunction extends DriverClass {
         Assert.assertTrue(message.getText().contains("successfully"));
     }
 
-    @Test(dependsOnMethods = "addAddressTest")
+    @Test(dependsOnMethods = "addAddressTest", groups = "MyGroup")
     void deleteAddressTest(){
         WebElement deleteButton = driver.findElement(By.xpath("(//a[text()=\"Delete\"])[2]"));
         deleteButton.click();

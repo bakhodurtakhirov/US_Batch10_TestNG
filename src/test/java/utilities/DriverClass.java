@@ -12,7 +12,8 @@ import java.io.IOException;
 public class DriverClass {
     public WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true) // Before Class doesn't work with groups. Because we are not running the class.
+    // We are running some tests in the class. To make sure it runs all the time we should add alwaysRun=true
     public void createDriver(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -28,7 +29,7 @@ public class DriverClass {
         login();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void quitDriver(){
         driver.quit();
         closePreviousDrivers();

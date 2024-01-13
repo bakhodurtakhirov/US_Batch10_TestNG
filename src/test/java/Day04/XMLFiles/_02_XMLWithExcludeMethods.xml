@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+<!--    <test name="Test Methods Include">-->
+<!--        <classes>-->
+<!--            <class name="Day04._01_Groups">-->
+<!--                <methods>-->
+<!--                    <include name="test4"></include> &lt;!&ndash;Runs only test4 method&ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Test Methods Exclude">
+        <classes>
+            <class name="Day04._01_Groups">
+                <methods>
+                    <exclude name="test2"></exclude>
+                    <exclude name="test5"></exclude>
+                    <!--Runs all tests but test2 and test5-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <test name="Contact Us Test">
+        <parameter name="message" value="Batch 10 is coming."></parameter>
+        <classes>
+            <class name="Day04._03_ContactUsTest"></class>
+        </classes>
+    </test>
+</suite>

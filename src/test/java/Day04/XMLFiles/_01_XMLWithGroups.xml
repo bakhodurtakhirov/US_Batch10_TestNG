@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test with Smoke Group">
+        <groups>
+            <run>
+                <include name="Smoke"></include> <!-- Runs the tests only with Smoke group name -->
+<!--                <exclude name="Smoke"></exclude> Runs all tests except the ones with Smoke group name-->
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Day04._01_Groups"></class>
+        </classes>
+    </test>
+    
+    <test name = "Test with Regression Group">
+        <groups>
+            <run>
+                <include name="Regression"></include>
+            </run>
+        </groups>
+        
+        <classes>
+            <class name="Day04._01_Groups"></class>
+        </classes>
+        
+    </test>
+</suite>

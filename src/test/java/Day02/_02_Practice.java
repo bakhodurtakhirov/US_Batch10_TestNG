@@ -18,7 +18,7 @@ public class _02_Practice extends DriverClass {
      * Verify the success message
      * Then change it back to the old name
      */
-    @Test
+    @Test(groups = "MyGroup")
     void updateAccountTest(){
         updateAccount("George");
         updateAccount("Michael");
