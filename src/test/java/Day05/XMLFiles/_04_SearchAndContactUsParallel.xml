@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2"> <!--We want to run 2 tests together-->
+    <test name="Search Test with Chrome">
+        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="searchKeyWord" value="mac"></parameter>
+        <classes>
+            <class name="Day05._02_SearchFunctionTest"></class>
+        </classes>
+    </test>
+
+    <test name="Contact Us Test with Edge">
+        <parameter name="browserName" value="edge"></parameter>
+        <classes>
+            <class name="Day05._01_ContactUsWithMultipleParameters"></class>
+        </classes>
+    </test>
+</suite>
