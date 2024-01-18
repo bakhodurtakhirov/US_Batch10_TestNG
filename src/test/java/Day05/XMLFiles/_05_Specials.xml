@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+    <test name="Specials test with Chrome">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="Day05._03_SpecialsTest"></class>
+        </classes>
+    </test>
+
+    <test name="Specials test with Edge">
+        <parameter name="browserName" value="edge"></parameter>
+        <classes>
+            <class name="Day05._03_SpecialsTest"></class>
+        </classes>
+    </test>
+</suite>
