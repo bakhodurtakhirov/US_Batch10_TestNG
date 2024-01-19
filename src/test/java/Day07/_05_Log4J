@@ -1,0 +1,9 @@
+What is Logging?
+- keeping track of what is going on about the application.
+- errors, what happened, who did it, when it happened...
+
+What are Logging libraries?
+- Log4J -> Log for Java -> apache group
+- JUL -> Java Unit Logging
+- SLF4J
+- Log4J2 -> Version 2 of Log4J - We are gonna learn this library

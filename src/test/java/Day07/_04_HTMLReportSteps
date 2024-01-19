@@ -1,0 +1,13 @@
+1. Run the test you want to get a report about if you haven't done yet
+
+2. Click on Run -> Edit Configuration
+
+3. Find the name of the test you want to get report about.
+
+4. On the right hand side click on Listeners button
+
+5. Click on add button below Listeners
+
+6. Search for report and select EmailableReporter
+
+7. Click on Apply then OK

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Wish List Test with Chrome">
+        <parameter name="keyword" value="ipod"></parameter>
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="Day07._02_WishListTest"></class>
+        </classes>
+    </test>
+
+    <test name="Wish List Test with Edge">
+        <parameter name="keyword" value="ipod"></parameter>
+        <parameter name="browserName" value="edge"></parameter>
+        <classes>
+            <class name="Day07._02_WishListTest"></class>
+        </classes>
+    </test>
+</suite>
