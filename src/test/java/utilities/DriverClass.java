@@ -7,15 +7,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class DriverClass {
-    public WebDriver driver;
+
+    public static WebDriver driver;
+    public WebDriverWait wait;
 
     @BeforeClass(alwaysRun = true) // Before Class doesn't work with groups. Because we are not running the class.
     // We are running some tests in the class. To make sure it runs all the time we should add alwaysRun=true
@@ -36,6 +40,8 @@ public class DriverClass {
                 driver = new EdgeDriver();
                 break;
         }
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
 //        driver = new ChromeDriver();
         driver.manage().window().maximize();
