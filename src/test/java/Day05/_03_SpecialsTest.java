@@ -64,6 +64,4 @@ public class _03_SpecialsTest extends DriverClass {
 
 
     }
-
-    //TODO: Create XML for this test
 }
