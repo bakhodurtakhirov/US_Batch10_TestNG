@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import utilities.DriverClass;
 
 import java.time.Duration;
+import java.util.List;
 
 public class _01_AddressFunction extends DriverClass {
 
@@ -46,16 +47,40 @@ public class _01_AddressFunction extends DriverClass {
         WebElement postcode = driver.findElement(By.id("input-postcode"));
         postcode.sendKeys("52364");
 
-        WebElement countrySelect = driver.findElement(By.id("input-country"));
-        Select select = new Select(countrySelect);
-        select.selectByVisibleText("United States");
+//        WebElement countrySelect = driver.findElement(By.id("input-country"));
+//        Select select = new Select(countrySelect);
+//        select.selectByVisibleText("United States");
+//
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//option[text()=\"Nevada\"]")));
+//
+//        WebElement stateSelect = driver.findElement(By.id("input-zone"));
+//        select  = new Select(stateSelect);
+//        select.selectByVisibleText("Nevada");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//option[text()=\"Nevada\"]")));
+        WebElement selectCountry = driver.findElement(By.id("input-country"));
+        List<WebElement> countryList = selectCountry.findElements(By.tagName("option"));
+        List<WebElement> listOfRegions = driver.findElements(By.xpath("//select[@id='input-zone']//option")); // List of regions of The United Kingdom
 
-        WebElement stateSelect = driver.findElement(By.id("input-zone"));
-        select  = new Select(stateSelect);
-        select.selectByVisibleText("Nevada");
+        Select countrySelect = new Select(selectCountry);
+        int randomCountryIndex = (int) (Math.random()*(countryList.size()-1))+1; // To avoid selecting Please Select
+
+        countrySelect.selectByIndex(randomCountryIndex);
+
+        WebElement selectRegion = driver.findElement(By.id("input-zone"));
+
+        Select regionSelect = new Select(selectRegion);
+
+        if (!countrySelect.getOptions().get(randomCountryIndex).getText().equals("United Kingdom")) {   // If selected country is not United Kingdom wait until one of its regions is not visible.
+                                                                                                        // If the selected country is UK it will skip if statement and continue with selected one of its regions randomly
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.invisibilityOf(listOfRegions.get(1)));
+        }
+
+        List<WebElement> listOfNewRegions = driver.findElements(By.xpath("//select[@id='input-zone']//option")); // List of regions of the new selected country
+        int randomRegionIndex = ((int) (Math.random()*(listOfNewRegions.size()-1)))+1;
+
+        regionSelect.selectByIndex(randomRegionIndex);
 
         WebElement continueButton = driver.findElement(By.cssSelector("input[type=\"submit\"]"));
         continueButton.click();
