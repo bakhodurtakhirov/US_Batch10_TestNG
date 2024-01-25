@@ -48,11 +48,11 @@ public class DriverClass {
 
         driver.get("https://opencart.abstracta.us/index.php?route=account/login");
 
-        WebElement advanceButton = driver.findElement(By.id("details-button"));
-        advanceButton.click();
-
-        WebElement proceedLink = driver.findElement(By.id("proceed-link"));
-        proceedLink.click();
+//        WebElement advanceButton = driver.findElement(By.id("details-button"));
+//        advanceButton.click();
+//
+//        WebElement proceedLink = driver.findElement(By.id("proceed-link"));
+//        proceedLink.click();
 
         login();
     }

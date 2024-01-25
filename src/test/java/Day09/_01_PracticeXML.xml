@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test name="Sort Function">
-        <parameter name="browserName" value="edge"></parameter>
+        <parameter name="browserName" value="chrome"></parameter>
         <classes>
             <class name="Day09._01_Practice"/>
         </classes>
